@@ -41,8 +41,3 @@ describe('Passing', function() {
     });
 });
 
-// jeden = null, drugi = null
-// jeden null, drugi nie null
-// nie ma wspolnych elementow
-
-//string passed to Expression
