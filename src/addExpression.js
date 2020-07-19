@@ -34,6 +34,7 @@ function add(exp1, exp2) {
         return b.exponent - a.exponent
     })
 
+    console.log(sortedArray)
     return sortedArray;
 }
 exports.add = add;

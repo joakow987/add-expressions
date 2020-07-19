@@ -1,9 +1,10 @@
-const add = require('./addExpression')
+const addExpression = require('./addExpression')
 const Expression = require('./Expression')
 
 try {
-    add.add([new Expression(0, 1), new Expression(2, 3), new Expression(2, 2), new Expression(1, 0)], [new Expression(1, 2), new Expression(1, 0)])
-    // add.add('s', [new Expression(1, 2), new Expression(1, 0)])
+    const firstExp = [new Expression(0, -1), new Expression(2, -2), new Expression(2, 2), new Expression(1, 0)];
+    const secondExp = [new Expression(-5, -2), new Expression(1, 0), new Expression(123, 4324)];
+    addExpression.add(firstExp, secondExp);
 } catch (e) {
     console.error(e);
 }

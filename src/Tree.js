@@ -21,7 +21,6 @@ module.exports = class Tree {
         const newNode = new Node(data);
         // excludes numbers with coefficients = 0
         if (newNode.data.coefficient !== 0) {
-            console.log(data)
             if (this.root === null) {
                 this.root = newNode;
             } else {
