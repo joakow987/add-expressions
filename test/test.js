@@ -4,7 +4,7 @@ const Expression = require('../src/Expression')
 
 describe('Adding', function() {
 
-    it('two expressions with some elements having the same exponent should add the coefficients of those elements and return a sorted Expression array', function() {
+    it('two expressions with some elements having the same positive exponent should add the coefficients of those elements and return a sorted Expression array', function() {
         const firstExpression = [new Expression(1, 2), new Expression(2, 3), new Expression(1, 0)];
         const secondExpression = [new Expression(2, 2), new Expression(1, 3), new Expression(1, 10)]
         const result = [new Expression(1, 10), new Expression(3, 3), new Expression(3, 2), new Expression(1, 0)]
@@ -13,8 +13,22 @@ describe('Adding', function() {
 
     it('two expression without any elements with the same exponent should return concatenated, sorted array', function() {
         const firstExpression = [new Expression(1, 1234), new Expression(2, 3)];
-        const secondExpression = [new Expression(2, 1), new Expression(1, 5)];
-        const result = [new Expression(1, 1234), new Expression(1, 5), new Expression(2, 3), new Expression(2, 1)]
+        const secondExpression = [new Expression(2, 1), new Expression(1, -3),];
+        const result = [new Expression(1, 1234), new Expression(2, 3), new Expression(2, 1), new Expression(1, -3)]
+        expect(addExpression.add(firstExpression, secondExpression), result)
+    });
+
+    it('two expressions with some negative exponents should add the coefficients of elements with the same exponent and return a sorted Expression array', function() {
+        const firstExpression = [new Expression(1, -2), new Expression(2, 3)];
+        const secondExpression = [new Expression(2, -2), new Expression(1, 3)];
+        const result = [new Expression(3, 3), new Expression(3, -2)]
+        expect(addExpression.add(firstExpression, secondExpression), result)
+    });
+
+    it('two expressions with negative exponents and coefficients should add the coefficients of elements with the same exponent and return a sorted Expression array', function() {
+        const firstExpression = [new Expression(-1, -2), new Expression(-2, -5)];
+        const secondExpression = [new Expression(2, -2), new Expression(-4, -5)];
+        const result = [new Expression(-1, -2), new Expression(-6, -5)]
         expect(addExpression.add(firstExpression, secondExpression), result)
     });
 
