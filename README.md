@@ -15,5 +15,4 @@ The structure I used for storing the expressions is Expression class which conta
 Then the whole expression is stored in an array, so `2x^4 + 3x^2 + 5` will be such an array in this program: 
 `[new Expression(2,4), new Expression(3,2), new Expression(5, 0)]`
 
-The elements of the arrays are then placed in a binary tree to quicken the process of exponents sorting. In inorder tree traversal
-
+The elements of the arrays are then placed in a binary tree to quicken the process of exponents sorting. In inorder tree traversal the Expression objects are added to the array, which is then sorted descendingly by the exponent value of the Expression objects.
